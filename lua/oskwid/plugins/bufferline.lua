@@ -1,4 +1,4 @@
-local oskwid_themes = require("oswid.palette").themes
+local oskwid_themes = require("oskwid.palette").themes
 
 local active = {
   fg = oskwid_themes.foreground,
