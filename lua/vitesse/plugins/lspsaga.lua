@@ -5,6 +5,7 @@ return function(opts, value)
   local styles = require("colorbuddy.init").styles
   local normal = value.normal
 
+  Group.new("SagaWinbarSep", colors.red)
   Group.new("SagaBorder", groups.FloatBorder)
   Group.new("CodeActionText", colors.yellow)
   Group.new("FinderSelection", colors.primary, colors.none, styles.bold)
