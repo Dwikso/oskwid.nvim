@@ -5,7 +5,7 @@ return function(opts)
   local colors = require("colorbuddy.init").colors
   local groups = require("colorbuddy.init").groups
   local styles = require("colorbuddy.init").styles
-  local hl = require("vitesse.util").hl
+  local hl = require("oskwid.util").hl
 
   -- diagnostics
   Group.new("DiagnosticError", colors.Error)

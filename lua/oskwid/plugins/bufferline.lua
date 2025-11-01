@@ -1,18 +1,18 @@
-local vitesse_themes = require("vitesse.palette").themes
+local oskwid_themes = require("oswid.palette").themes
 
 local active = {
-  fg = vitesse_themes.foreground,
+  fg = oskwid_themes.foreground,
 }
 
 local inactive = {
-  fg = vitesse_themes.secondaryForeground,
-  bg = vitesse_themes.lowBackground,
+  fg = oskwid_themes.secondaryForeground,
+  bg = oskwid_themes.lowBackground,
 }
 
 local M = {
   -- whole bar background
   fill = {
-    bg = vitesse_themes.activeBackground,
+    bg = oskwid_themes.activeBackground,
   },
 
   -- inactive tab
@@ -20,13 +20,13 @@ local M = {
 
   -- inactive tab separator
   separator = {
-    fg = vitesse_themes.activeBackground,
+    fg = oskwid_themes.activeBackground,
     bg = inactive.bg,
   },
 
   -- active tab separator
   separator_selected = {
-    fg = vitesse_themes.activeBackground,
+    fg = oskwid_themes.activeBackground,
   },
 
   buffer_selected = {
@@ -35,25 +35,25 @@ local M = {
 
   -- top-right
   tab = {
-    bg = vitesse_themes.activeBackground,
+    bg = oskwid_themes.activeBackground,
   },
   tab_selected = active,
   tab_separator = {
-    fg = vitesse_themes.activeBackground,
-    bg = vitesse_themes.activeBackground,
+    fg = oskwid_themes.activeBackground,
+    bg = oskwid_themes.activeBackground,
   },
   tab_separator_selected = {
-    fg = vitesse_themes.activeBackground,
+    fg = oskwid_themes.activeBackground,
   },
 
   -- <-, ->
   trunc_marker = {
-    bg = vitesse_themes.activeBackground,
+    bg = oskwid_themes.activeBackground,
   },
 
   -- tab close icon
   tab_close = {
-    bg = vitesse_themes.activeBackground,
+    bg = oskwid_themes.activeBackground,
   },
 
   -- bar close icon
@@ -69,7 +69,7 @@ local M = {
 
   -- duplicated prefix text
   duplicate = {
-    fg = vitesse_themes.ignored,
+    fg = oskwid_themes.ignored,
     bg = inactive.bg,
   },
 

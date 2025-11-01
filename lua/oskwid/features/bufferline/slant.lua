@@ -1,4 +1,4 @@
-local highlights = require("vitesse.plugins.bufferline")
+local highlights = require("oskwid.plugins.bufferline")
 
 return {
   ---@deprecated will remove this later

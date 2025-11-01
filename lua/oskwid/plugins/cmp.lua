@@ -4,7 +4,7 @@ return function(opts)
   local Group = require("colorbuddy.init").Group
   local groups = require("colorbuddy.init").groups
   local styles = require("colorbuddy.init").styles
-  local hl = require("vitesse.util").hl
+  local hl = require("oskwid.util").hl
 
   Color.new("codeium", "#09B6A2")
 
@@ -45,7 +45,7 @@ return function(opts)
   hl("CmpItemKindTypeParameter", { link = "@type" })
 
   if opts.cmp_cmdline_disable_search_highlight_group then
-    local group = vim.api.nvim_create_augroup("vitesse_cmp_cmdline_disable_search_highlight_group", { clear = true })
+    local group = vim.api.nvim_create_augroup("oskwid_cmp_cmdline_disable_search_highlight_group", { clear = true })
 
     vim.api.nvim_create_autocmd("CmdlineEnter", {
       pattern = "*",

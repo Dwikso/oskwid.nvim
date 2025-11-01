@@ -1,5 +1,5 @@
-local vitesse_colors = require("vitesse.palette").colors
-local vitesse_themes = require("vitesse.palette").themes
+local oskwid_colors = require("oskwid.palette").colors
+local oskwid_themes = require("oskwid.palette").themes
 
 local cmd = vim.cmd
 local fn = vim.fn
@@ -16,8 +16,8 @@ local defaults = {
   telescope_border_follow_float_background = false,
   lspsaga_border_follow_float_background = false,
   diagnostic_virtual_text_background = false,
-  colors = {}, -- override `vitesse_colors`
-  themes = {}, -- override `vitesse_themes`
+  colors = {}, -- override `oskwid_colors`
+  themes = {}, -- override `oskwid_themes`
 }
 
 local M = {
@@ -31,8 +31,8 @@ local M = {
 function M.setup(user_opts)
   user_opts = user_opts or {}
   opts = vim.tbl_extend("force", defaults, user_opts)
-  vitesse_colors = vim.tbl_extend("force", vitesse_colors, opts.colors)
-  vitesse_themes = vim.tbl_extend("force", vitesse_themes, opts.themes)
+  oskwid_colors = vim.tbl_extend("force", oskwid_colors, opts.colors)
+  oskwid_themes = vim.tbl_extend("force", oskwid_themes, opts.themes)
 end
 
 function M.load()
@@ -45,7 +45,7 @@ function M.load()
     cmd("syntax reset")
   end
 
-  vim.g.colors_name = "vitesse"
+  vim.g.colors_name = "oskwid"
 
   local Color = M.Color
   local colors = M.colors
@@ -53,51 +53,51 @@ function M.load()
   local groups = M.groups
   local styles = M.styles
 
-  Color.new("bg", vitesse_themes.background)
+  Color.new("bg", oskwid_themes.background)
 
-  Color.new("black", vitesse_colors.black)
-  Color.new("black1", vitesse_colors.black1)
-  Color.new("black2", vitesse_colors.black2)
-  Color.new("black3", vitesse_colors.black3)
-  Color.new("white3", vitesse_colors.white3)
-  Color.new("white2", vitesse_colors.white2)
-  Color.new("white1", vitesse_colors.white1)
-  Color.new("white", vitesse_colors.white)
-  Color.new("purple6", vitesse_colors.purple6)
+  Color.new("black", oskwid_colors.black)
+  Color.new("black1", oskwid_colors.black1)
+  Color.new("black2", oskwid_colors.black2)
+  Color.new("black3", oskwid_colors.black3)
+  Color.new("white3", oskwid_colors.white3)
+  Color.new("white2", oskwid_colors.white2)
+  Color.new("white1", oskwid_colors.white1)
+  Color.new("white", oskwid_colors.white)
+  Color.new("purple6", oskwid_colors.purple6)
 
-  Color.new("primary", vitesse_themes.primary)
+  Color.new("primary", oskwid_themes.primary)
 
-  Color.new("baseForeground", vitesse_themes.foreground)
-  Color.new("activeForeground", vitesse_themes.activeForeground)
-  Color.new("secondaryForeground", vitesse_themes.secondaryForeground)
-  Color.new("ignored", vitesse_themes.ignored)
-  Color.new("border", vitesse_themes.border)
+  Color.new("baseForeground", oskwid_themes.foreground)
+  Color.new("activeForeground", oskwid_themes.activeForeground)
+  Color.new("secondaryForeground", oskwid_themes.secondaryForeground)
+  Color.new("ignored", oskwid_themes.ignored)
+  Color.new("border", oskwid_themes.border)
 
-  Color.new("baseBackground", vitesse_themes.background)
-  Color.new("activeBackground", vitesse_themes.activeBackground)
+  Color.new("baseBackground", oskwid_themes.background)
+  Color.new("activeBackground", oskwid_themes.activeBackground)
 
-  Color.new("lowBackground", vitesse_themes.lowBackground)
-  Color.new("lowActiveBackground", vitesse_themes.lowActiveBackground)
-  Color.new("lowBorder", vitesse_themes.lowBorder)
+  Color.new("lowBackground", oskwid_themes.lowBackground)
+  Color.new("lowActiveBackground", oskwid_themes.lowActiveBackground)
+  Color.new("lowBorder", oskwid_themes.lowBorder)
 
-  Color.new("comment", vitesse_themes.comment)
-  Color.new("string", vitesse_themes.string)
-  Color.new("variable", vitesse_themes.variable)
-  Color.new("keyword", vitesse_themes.keyword)
-  Color.new("number", vitesse_themes.number)
-  Color.new("boolean", vitesse_themes.boolean)
-  Color.new("operator", vitesse_themes.operator)
-  Color.new("func", vitesse_themes.func)
-  Color.new("constant", vitesse_themes.constant)
-  Color.new("class", vitesse_themes.class)
-  Color.new("interface", vitesse_themes.interface)
-  Color.new("type", vitesse_themes.type)
-  Color.new("builtin", vitesse_themes.builtin)
-  Color.new("property", vitesse_themes.property)
-  Color.new("namespace", vitesse_themes.namespace)
-  Color.new("punctuation", vitesse_themes.punctuation)
-  Color.new("decorator", vitesse_themes.decorator)
-  Color.new("regex", vitesse_themes.regex)
+  Color.new("comment", oskwid_themes.comment)
+  Color.new("string", oskwid_themes.string)
+  Color.new("variable", oskwid_themes.variable)
+  Color.new("keyword", oskwid_themes.keyword)
+  Color.new("number", oskwid_themes.number)
+  Color.new("boolean", oskwid_themes.boolean)
+  Color.new("operator", oskwid_themes.operator)
+  Color.new("func", oskwid_themes.func)
+  Color.new("constant", oskwid_themes.constant)
+  Color.new("class", oskwid_themes.class)
+  Color.new("interface", oskwid_themes.interface)
+  Color.new("type", oskwid_themes.type)
+  Color.new("builtin", oskwid_themes.builtin)
+  Color.new("property", oskwid_themes.property)
+  Color.new("namespace", oskwid_themes.namespace)
+  Color.new("punctuation", oskwid_themes.punctuation)
+  Color.new("decorator", oskwid_themes.decorator)
+  Color.new("regex", oskwid_themes.regex)
 
   Group.new("Comment", colors.comment, colors.none, opts.comment_italics and styles.italic or styles.NONE)
   Group.new("String", colors.string)
@@ -118,18 +118,18 @@ function M.load()
   Group.new("Decorator", colors.decorator)
   Group.new("Regex", colors.regex)
 
-  Color.new("green", vitesse_themes.green)
-  Color.new("cyan", vitesse_themes.cyan)
-  Color.new("blue", vitesse_themes.blue)
-  Color.new("red", vitesse_themes.red)
-  Color.new("orange", vitesse_themes.orange)
-  Color.new("yellow", vitesse_themes.yellow)
-  Color.new("magenta", vitesse_themes.magenta)
+  Color.new("green", oskwid_themes.green)
+  Color.new("cyan", oskwid_themes.cyan)
+  Color.new("blue", oskwid_themes.blue)
+  Color.new("red", oskwid_themes.red)
+  Color.new("orange", oskwid_themes.orange)
+  Color.new("yellow", oskwid_themes.yellow)
+  Color.new("magenta", oskwid_themes.magenta)
 
-  Color.new("Error", vitesse_themes.red)
-  Color.new("Warn", vitesse_themes.yellow)
-  Color.new("Info", vitesse_themes.blue)
-  Color.new("Hint", vitesse_themes.cyan)
+  Color.new("Error", oskwid_themes.red)
+  Color.new("Warn", oskwid_themes.yellow)
+  Color.new("Info", oskwid_themes.blue)
+  Color.new("Hint", oskwid_themes.cyan)
 
   Group.new("Error", colors.Error)
   Group.new("Warn", colors.Warn)
@@ -158,7 +158,7 @@ function M.load()
   Group.new("NormalFloat", groups.Normal, normal.float_bg)
 
   -- pum (popup menu) float
-  Group.link("Pmenu", groups.NormalFloat) -- popup menu normal item
+  Group.link("Pmenu", groups.NormalFloat)                                   -- popup menu normal item
   Group.new("PmenuSel", colors.activeBackground, normal.fg, styles.reverse) -- selected item
   Group.new("PmenuSbar", colors.black1, colors.none, styles.reverse)
   Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
@@ -179,7 +179,7 @@ function M.load()
 
   -- any statement, conditional, repeat (for, do while), label, operator
   Group.new("Statement", colors.green)
-  Group.new("PreProc", colors.red) -- was orange
+  Group.new("PreProc", colors.red)      -- was orange
   Group.new("Special", colors.property) -- was red
   Group.new("SpecialKey", colors.property)
   Group.new("Underlined", colors.red)
@@ -269,47 +269,47 @@ function M.load()
   -- plugins
 
   -- treesitter, important
-  require("vitesse.plugins.treesitter")(opts)
+  require("oskwid.plugins.treesitter")(opts)
   -- lsp
-  require("vitesse.plugins.lsp")(opts)
+  require("oskwid.plugins.lsp")(opts)
   -- neomake
-  require("vitesse.plugins.neomake")
+  require("oskwid.plugins.neomake")
   -- gitgutter
-  require("vitesse.plugins.gitgutter")
+  require("oskwid.plugins.gitgutter")
   -- gitsigns
-  require("vitesse.plugins.gitsigns")
+  require("oskwid.plugins.gitsigns")
   -- cmp
-  require("vitesse.plugins.cmp")(opts)
+  require("oskwid.plugins.cmp")(opts)
   -- lspsaga
-  require("vitesse.plugins.lspsaga")(opts, { normal = normal })
+  require("oskwid.plugins.lspsaga")(opts, { normal = normal })
   -- telescope
-  require("vitesse.plugins.telescope")(opts, { normal = normal })
+  require("oskwid.plugins.telescope")(opts, { normal = normal })
   -- neogit
-  require("vitesse.plugins.neogit")(opts)
+  require("oskwid.plugins.neogit")(opts)
   -- Primeagen/harpoon
-  require("vitesse.plugins.harpoon")
+  require("oskwid.plugins.harpoon")
   -- nvim-tree/nvim-tree.lua
-  require("vitesse.plugins.nvim-tree")
+  require("oskwid.plugins.nvim-tree")
   -- phaazon/hop.nvim
-  require("vitesse.plugins.hop")
+  require("oskwid.plugins.hop")
   -- j-hui/fidget
-  require("vitesse.plugins.fidget")
+  require("oskwid.plugins.fidget")
   -- lukas-reineke/indent-blankline.nvim
-  require("vitesse.plugins.indent-blankline")
+  require("oskwid.plugins.indent-blankline")
   -- folke/which-key.nvim
-  require("vitesse.plugins.which-key")
+  require("oskwid.plugins.which-key")
   -- folke/noice.nvim
-  require("vitesse.plugins.noice")(opts, { normal = normal })
+  require("oskwid.plugins.noice")(opts, { normal = normal })
   -- neo-tree
-  require("vitesse.plugins.neo-tree")(opts)
+  require("oskwid.plugins.neo-tree")(opts)
   -- alpha
-  require("vitesse.plugins.alpha")(opts)
+  require("oskwid.plugins.alpha")(opts)
   -- echasnovski/mini.indentscope
-  require("vitesse.plugins.mini-indentscope")(opts)
+  require("oskwid.plugins.mini-indentscope")(opts)
   -- vim-illuminate
-  require("vitesse.plugins.illuminate")(opts)
+  require("oskwid.plugins.illuminate")(opts)
   -- seblj/nvim-tabline
-  require("vitesse.plugins.tabline")(opts, { normal = normal })
+  require("oskwid.plugins.tabline")(opts, { normal = normal })
 
   return M
 end
